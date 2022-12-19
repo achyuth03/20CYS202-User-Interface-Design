@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anokha Registeration</title>
+<link rel="icon" type="image/x-icon" href="./favicon/Amrita_logo_favicon.png"></link>
+</head>
+<body>
+		<link rel="icon" type="image/x-icon" href="./favicon/Amrita_logo_favicon.png"></link>
+		<body style="background-repeat:no-repeat;background-image: url(https://imgs.search.brave.com/PKLbVeyJeRWMNPW0op_l_TNEJoL3ZSTeAe0V3upvuzU/rs:fit:1200:1080:1/g:ce/aHR0cDovL3d3dy53/YWxscGFwZXJzNHUu/b3JnL3dwLWNvbnRl/bnQvdXBsb2Fkcy9i/YWNrZ3JvdW5kX3Nv/bGlkX2xpZ2h0X2Fi/c3RyYWN0aW9uXzQ2/NTczXzE5MjB4MTA4/MC5qcGc);background-size: cover;">
+		<h1 style="text-align: center;">ANOKHA REGISTRATION FORM</h1>
+		<form name="RegForm" onsubmit="return GEEKFORGEEKS()" method="post">
+		<img src="https://imgs.search.brave.com/YmIEhT-A_Ln--yazXDiAnkJY4PT_bt1HPSx_zSuDmbQ/rs:fit:620:414:1/g:ce/aHR0cHM6Ly9pbWcu/ZHRuZXh0LmluL0lt/YWdlcy9BcnRpY2xl/LzIwMTYwMzA0MTU1/NjU5MDQ1Ml9Sb2Jv/dHMtYnktQW1yaXRh/LVVuaXZlcnNpdHkt/c3R1ZGVudHMtd2lu/LTUtYXdhcmRzLWlu/X1NFQ1ZQRi5naWY.gif" alt="alternatetext" align=right>
+			
+<p>Name: <input type="text"
+							size="65" name="Name" /></p>
+
+			<br />
+			
+<p>Address: <input type="text"
+							size="65" name="Address" />
+		</p>
+
+			<br />
+			
+<p>E-mail Address: <input type="text"
+							size="65" name="EMail" /></p>
+
+			<br />
+			
+<p>Password: <input type="password"
+						size="65" name="Password" /></p>
+
+			<br />
+			
+<p>Telephone: <input type="text"
+						size="65" name="Telephone" /></p>
+
+			<br />
+
+			
+<p>
+				SELECT YOUR COURSE
+				<select type="text" value="" name="Subject">
+					<option>BTECH</option>
+					<option>BBA</option>
+					<option>BCA</option>
+					<option>B.COM</option>
+					<option>BA</option>
+				</select>
+			</p>
+
+			<br />
+			<br />
+			
+<p>Comments: <textarea cols="55"
+							name="Comment"> </textarea></p>
+
+			
+<p>
+				<button type="submit" onclick="GEEKFORGEEKS()"><a href="./html/Login.html">Login</a></button>
+</p>		
+
+<script>
+			function GEEKFORGEEKS() {
+				var flag=0;
+				var name =
+					document.forms.RegForm.Name.value;
+				var email =
+					document.forms.RegForm.EMail.value;
+				var phone =
+					document.forms.RegForm.Telephone.value;
+				var what =
+					document.forms.RegForm.Subject.value;
+				var password =
+					document.forms.RegForm.Password.value;
+				var address =
+					document.forms.RegForm.Address.value;
+				var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+				var regPhone=/^\d{10}$/;									 // Javascript reGex for Phone Number validation.
+				var regName = /\d+$/g;								 // Javascript reGex for Name validation
+
+				if (name == "" || regName.test(name)) {
+					window.alert("Please enter your name properly.");
+					flag=1;
+					name.focus();
+					return false;
+				}
+
+				if (address == "") {
+					window.alert("Please enter your address.");
+					flag=1;
+					address.focus();
+					return false;
+				}
+				
+				if (email == "" || !regEmail.test(email)) {
+					window.alert("Please enter a valid e-mail address.");
+					flag=1;
+					email.focus();
+					return false;
+				}
+				
+				if (password == "") {
+					alert("Please enter your password");
+					flag=1;
+					password.focus();
+					return false;
+				}
+
+				if(password.length <6){
+					alert("Password should be atleast 6 character long");
+					flag=1;
+					password.focus();
+					return false;
+
+				}
+				if (phone == "" || !regPhone.test(phone)) {
+					alert("Please enter valid phone number.");
+					flag=1;
+					phone.focus();
+					return false;
+				}
+
+				if (what.selectedIndex == -1) {
+					alert("Please enter your course.");
+					flag=1;
+					what.focus();
+					return false;
+				}
+				if (flag==0){
+					alert("successfully registered.");
+				return true;
+			}
+		}
+		</script>
+		</form>
+</body>
+</html>
+			
